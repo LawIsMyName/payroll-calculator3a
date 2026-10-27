@@ -38,11 +38,11 @@ public class PayRollCalculatorApp {
 
             bufferedWriter.write("id|name|gross pay\n");
 
-            String line;
+
 
             String headerLine = bufferedReader.readLine(); // ignore header
 
-
+            String Line;
 
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
@@ -56,9 +56,11 @@ public class PayRollCalculatorApp {
 
                 Employee employee = new Employee (employeeId, name, hoursWorked, payRate);
                 employees.add(employee);
+
+                double grosspay = employee.calculateGrossPay();
             }
 
-            bufferedReader.close();
+
         } catch (IOException e) {
             System.out.println("there was an error reading the file.");
         }
