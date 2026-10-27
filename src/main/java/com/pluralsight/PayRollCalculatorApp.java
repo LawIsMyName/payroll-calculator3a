@@ -39,10 +39,9 @@ public class PayRollCalculatorApp {
             bufferedWriter.write("id|name|gross pay\n");
 
 
-
             String headerLine = bufferedReader.readLine(); // ignore header
 
-            String Line;
+            String line;
 
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
