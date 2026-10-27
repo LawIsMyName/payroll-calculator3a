@@ -20,12 +20,13 @@ public class PayRollCalculatorApp {
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
 
-                String[] fields = line.split("|");
+                String[] fields = line.split(Pattern.quote ("|"));
 
                 System.out.println(fields[0]);
                 System.out.println(fields[1]);
                 System.out.println(fields[2]);
                 System.out.println(fields[3]);
+                System.out.println("______________________");
 
             }
         } catch (IOException e) {
