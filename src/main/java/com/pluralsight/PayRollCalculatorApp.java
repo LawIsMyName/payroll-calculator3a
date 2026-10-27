@@ -58,9 +58,8 @@ public class PayRollCalculatorApp {
                 Employee employee = new Employee (employeeId, name, hoursWorked, payRate);
                 employees.add(employee);
 
-                double grossPay = employee.calculateGrossPay();
+                bufferedWriter.write(employee.toPayrollCSV());
 
-                String
             }
 
 
