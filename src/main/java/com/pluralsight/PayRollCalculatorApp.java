@@ -30,7 +30,7 @@ public class PayRollCalculatorApp {
                 double payRate = Double.parseDouble(fields[3]);
 
                 Employee employee = new Employee (employeeId, name, hoursWorked, payRate);
-                System.out.println(employee);
+                System.out.println(employee.toString());
 
 
             }
