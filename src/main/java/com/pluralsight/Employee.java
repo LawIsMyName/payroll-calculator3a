@@ -49,4 +49,14 @@ public class Employee {
     public double calculateGrossPay() {
         return hoursWorked * payRate;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeId=" + employeeId +
+                ", name='" + name + '\'' +
+                ", hoursWorked=" + hoursWorked +
+                ", payRate=" + payRate +
+                '}';
+    }
 }

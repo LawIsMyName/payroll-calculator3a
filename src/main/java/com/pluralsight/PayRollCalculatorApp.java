@@ -16,9 +16,8 @@ public class PayRollCalculatorApp {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
             String line;
-            String headerLine = bufferedReader.readLine();
 
-            System.out.println("____________________");
+            String headerLine = bufferedReader.readLine(); // ignore header
 
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
