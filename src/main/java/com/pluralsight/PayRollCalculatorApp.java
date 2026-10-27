@@ -20,6 +20,8 @@ public class PayRollCalculatorApp {
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
 
+                System.out.println("____________________");
+
                 String[] fields = line.split(Pattern.quote ("|"));
 
                 System.out.println(fields[0]);
