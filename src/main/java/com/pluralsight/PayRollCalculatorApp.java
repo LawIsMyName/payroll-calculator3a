@@ -36,6 +36,8 @@ public class PayRollCalculatorApp {
             FileWriter fileWriter = new FileWriter(outputFile);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
+            bufferedWriter.write("id|name|gross pay\n");
+
             String line;
 
             String headerLine = bufferedReader.readLine(); // ignore header
