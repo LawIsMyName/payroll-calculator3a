@@ -21,13 +21,14 @@ public class PayRollCalculatorApp {
         System.out.println("Enter employee file name: ");
         fileNames[0] = scanner.nextLine();
 
-
+        // Ask user for the payroll file
         System.out.println("Enter payroll file name: ");
         fileNames[1] = scanner.nextLine();
 
-
+        // Load employee information from the file
         List<Employee> employees = loadEmployees(fileNames);
 
+        // Display employee information in different formats
         printEmployeeTable(employees);
         printEmployeeRow(employees);
 
@@ -40,28 +41,32 @@ public class PayRollCalculatorApp {
             FileReader fileReader = new FileReader(fileNames[0]);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
+            // Create the payroll file for writing
             FileWriter fileWriter = new FileWriter(fileNames[1]);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
+            // Write the header for the payroll file
             bufferedWriter.write("id|name|gross pay\n");
-
-
-            bufferedReader.readLine(); // ignore header
 
             String line;
 
+            // Read each employee until the end of the file
             while ((line = bufferedReader.readLine()) != null) {
 
+                // Separate employee information using the pipe
                 String[] fields = line.split(Pattern.quote ("|"));
 
+                // Convert employee information into correct data types
                 int employeeId = Integer.parseInt(fields[0]);
                 String name = (fields[1]);
                 double  hoursWorked = Double.parseDouble(fields[2]);
                 double payRate = Double.parseDouble(fields[3]);
 
+                // Create an employee object and add it to the list
                 Employee employee = new Employee (employeeId, name, hoursWorked, payRate);
                 employees.add(employee);
 
+                // Write the employee's gross pay to the payroll file
                 bufferedWriter.write(employee.toPayrollCSV());
 
             }
