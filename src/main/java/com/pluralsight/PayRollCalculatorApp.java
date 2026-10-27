@@ -12,12 +12,15 @@ public class PayRollCalculatorApp {
 
         Scanner scanner = new Scanner(System.in);
 
+        // Array to store input and output file names
         String[] fileNames = new String[2];
 
         System.out.println("===== PAYROLL CALCULATOR =====");
 
+        // Ask user for the employee file
         System.out.println("Enter employee file name: ");
         fileNames[0] = scanner.nextLine();
+
 
         System.out.println("Enter payroll file name: ");
         fileNames[1] = scanner.nextLine();
