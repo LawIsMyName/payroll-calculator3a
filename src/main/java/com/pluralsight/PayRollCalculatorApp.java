@@ -16,6 +16,9 @@ public class PayRollCalculatorApp {
         System.out.println("Enter employee file name: ");
         String inputFile = scanner.nextLine();
 
+        System.out.println("Enter payroll file name: ");
+        String outputFile = scanner.nextLine();
+
         List<Employee> employees = loadEmployees();
 
         printEmployeeTable(employees);
