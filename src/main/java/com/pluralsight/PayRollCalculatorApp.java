@@ -62,6 +62,9 @@ public class PayRollCalculatorApp {
 
             }
 
+            bufferedReader.close();
+            bufferedWriter.close();
+
 
         } catch (IOException e) {
             System.out.println("there was an error reading the file.");
