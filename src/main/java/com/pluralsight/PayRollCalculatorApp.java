@@ -28,14 +28,14 @@ public class PayRollCalculatorApp {
 
     }
 
-    private static List<Employee> loadEmployees(String inputFile, String outputFile) {
+    private static List<Employee> loadEmployees(String[] fileNames) {
         List<Employee> employees = new ArrayList<>();
 
         try {
-            FileReader fileReader = new FileReader(inputFile);
+            FileReader fileReader = new FileReader(fileNames[0]);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            FileWriter fileWriter = new FileWriter(outputFile);
+            FileWriter fileWriter = new FileWriter(fileNames[1]);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
             bufferedWriter.write("id|name|gross pay\n");
@@ -64,6 +64,8 @@ public class PayRollCalculatorApp {
 
             bufferedReader.close();
             bufferedWriter.close();
+
+            System.out.println("payroll file created: " + fileNames[1]);
 
 
         } catch (IOException e) {
