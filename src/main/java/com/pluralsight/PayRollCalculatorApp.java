@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class PayRollCalculatorApp {
     public static void main(String[] args) {
@@ -18,10 +19,20 @@ public class PayRollCalculatorApp {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
+
+                String[] fields = line.split("|");
+
+                System.out.println(fields[0]);
+                System.out.println(fields[1]);
+                System.out.println(fields[2]);
+                System.out.println(fields[2]);
+
             }
         } catch (IOException e) {
             System.out.println("there was an error reading the file.");
         }
+
+
 
     }
 }
