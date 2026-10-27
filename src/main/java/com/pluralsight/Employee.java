@@ -76,6 +76,11 @@ public class Employee {
                 employeeId, name, hoursWorked, payRate);
     }
 
+    public String toPayrollCSV() {
+        return String.format("%d|%s|%.2f%n",
+                employeeId, name, calculateGrossPay());
+    }
+
     @Override
     public String toString() {
         return "Employee{" +

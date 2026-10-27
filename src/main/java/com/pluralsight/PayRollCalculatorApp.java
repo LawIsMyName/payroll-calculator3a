@@ -11,6 +11,8 @@ public class PayRollCalculatorApp {
 
         Scanner scanner = new Scanner(System.in);
 
+        string[]
+
         System.out.println("Enter employee file name: ");
         String inputFile = scanner.nextLine();
 
@@ -56,7 +58,9 @@ public class PayRollCalculatorApp {
                 Employee employee = new Employee (employeeId, name, hoursWorked, payRate);
                 employees.add(employee);
 
-                double grosspay = employee.calculateGrossPay();
+                double grossPay = employee.calculateGrossPay();
+
+                String
             }
 
 
