@@ -11,6 +11,10 @@ import java.util.regex.Pattern;
 public class PayRollCalculatorApp {
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+
+
+
         List<Employee> employees = loadEmployees();
 
         printEmployeeTable(employees);
@@ -46,6 +50,7 @@ public class PayRollCalculatorApp {
                 employees.add(employee);
             }
 
+            bufferedReader.close();
         } catch (IOException e) {
             System.out.println("there was an error reading the file.");
         }
