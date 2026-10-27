@@ -11,17 +11,17 @@ public class PayRollCalculatorApp {
 
         Scanner scanner = new Scanner(System.in);
 
-        string[]
+        String[] fileNames = new String[2];
+
 
         System.out.println("Enter employee file name: ");
-        String inputFile = scanner.nextLine();
+        fileNames[0] = scanner.nextLine();
 
         System.out.println("Enter payroll file name: ");
-        String outputFile = scanner.nextLine();
+        fileNames[1] = scanner.nextLine();
 
 
-        List<Employee> employees = loadEmployees(inputFile, outputFile);
-        System.out.println("Payroll file created: " + outputFile);
+        List<Employee> employees = loadEmployees(fileNames);
 
         printEmployeeTable(employees);
         printEmployeeRow(employees);
