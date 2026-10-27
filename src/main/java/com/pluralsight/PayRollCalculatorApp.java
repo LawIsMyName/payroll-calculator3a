@@ -17,10 +17,11 @@ public class PayRollCalculatorApp {
 
             // read a line into line, then check it isn't null, all in one step
             String line;
+
+            System.out.println("____________________");
+
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
-
-                System.out.println("____________________");
 
                 String[] fields = line.split(Pattern.quote ("|"));
 
