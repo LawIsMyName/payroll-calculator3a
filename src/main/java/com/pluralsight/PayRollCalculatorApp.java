@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import java.util.*;
 
 public class PayRollCalculatorApp {
     public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class PayRollCalculatorApp {
 
         String[] fileNames = new String[2];
 
+        System.out.println("===== PAYROLL CALCULATOR =====");
 
         System.out.println("Enter employee file name: ");
         fileNames[0] = scanner.nextLine();
@@ -68,7 +70,7 @@ public class PayRollCalculatorApp {
 
 
         } catch (IOException e) {
-            System.out.println("there was an error reading the file.");
+            System.out.println("there was an error reading or writing the file.");
         }
         return employees;
     }
