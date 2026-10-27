@@ -48,6 +48,8 @@ public class PayRollCalculatorApp {
             // Write the header for the payroll file
             bufferedWriter.write("id|name|gross pay\n");
 
+            bufferedReader.readLine();
+
             String line;
 
             // Read each employee until the end of the file
