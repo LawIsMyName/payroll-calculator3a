@@ -15,8 +15,8 @@ public class PayRollCalculatorApp {
             FileReader fileReader = new FileReader("employees.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            // read a line into line, then check it isn't null, all in one step
             String line;
+            String headerLine = bufferedReader.readLine();
 
             System.out.println("____________________");
 
@@ -25,11 +25,14 @@ public class PayRollCalculatorApp {
 
                 String[] fields = line.split(Pattern.quote ("|"));
 
-                System.out.println(fields[0]);
-                System.out.println(fields[1]);
-                System.out.println(fields[2]);
-                System.out.println(fields[3]);
-                System.out.println("______________________");
+                int employeeId = Integer.parseInt(fields[0]);
+                String name = (fields[1]);
+                double  hoursWorked = Double.parseDouble(fields[2]);
+                double payRate = Double.parseDouble(fields[3]);
+
+                Employee employee = new Employee (employeeId, name, hoursWorked, payRate);
+                System.out.println(employee);
+
 
             }
         } catch (IOException e) {
