@@ -25,7 +25,7 @@ public class PayRollCalculatorApp {
                 System.out.println(fields[0]);
                 System.out.println(fields[1]);
                 System.out.println(fields[2]);
-                System.out.println(fields[2]);
+                System.out.println(fields[3]);
 
             }
         } catch (IOException e) {
