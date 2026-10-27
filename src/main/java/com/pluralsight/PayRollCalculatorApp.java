@@ -3,12 +3,23 @@ package com.pluralsight;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class PayRollCalculatorApp {
     public static void main(String[] args) {
 
+        List<Employee> employees = loadEmployees();
+
+        printEmployeeTable(employees);
+        printEmployeeRow(employees);
+
+    }
+
+    private static List<Employee> loadEmployees() {
+        List<Employee> employees = new ArrayList<>();
         //  Scanner scanner = new Scanner(System.in);
 
         try {
@@ -18,6 +29,8 @@ public class PayRollCalculatorApp {
             String line;
 
             String headerLine = bufferedReader.readLine(); // ignore header
+
+
 
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
@@ -30,15 +43,26 @@ public class PayRollCalculatorApp {
                 double payRate = Double.parseDouble(fields[3]);
 
                 Employee employee = new Employee (employeeId, name, hoursWorked, payRate);
-                System.out.println(employee.toString());
-
-
+                employees.add(employee);
             }
+
         } catch (IOException e) {
             System.out.println("there was an error reading the file.");
         }
-
-
-
+        return employees;
     }
+
+    private static void printEmployeeRow(List<Employee> employees) {
+        for (Employee employee : employees) {
+            System.out.println(employee.toCard());
+        }
+    }
+
+    private static void printEmployeeTable(List<Employee> employees) {
+        for (Employee employee : employees) {
+            System.out.println(employee.toRow());
+        }
+    }
+
 }
+

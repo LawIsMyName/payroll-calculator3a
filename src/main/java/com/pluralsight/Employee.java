@@ -50,6 +50,32 @@ public class Employee {
         return hoursWorked * payRate;
     }
 
+    public String toRow() {
+        return String.format(
+                "+------+----------------------+------------+----------+%n" +
+                        "| %-4d | %-20s | %10.2f | $%7.2f |%n" +
+                        "+------+----------------------+------------+----------+",
+                employeeId, name, hoursWorked, payRate);
+    }
+
+    public String toCard() {
+        return String.format(
+                "+--------------------------------+%n" +
+                        "|        EMPLOYEE DETAILS        |%n" +
+                        "+--------------------------------+%n" +
+                        "| Employee ID:   %-15d |%n" +
+                        "| Name:          %-15s |%n" +
+                        "| Hours Worked:  %-15.2f |%n" +
+                        "| Pay Rate:      $%-14.2f |%n" +
+                        "+--------------------------------+",
+                employeeId, name, hoursWorked, payRate);
+    }
+
+    public String toCSV() {
+        return String.format("%d|%s|%s|%.2f",
+                employeeId, name, hoursWorked, payRate);
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -60,3 +86,6 @@ public class Employee {
                 '}';
     }
 }
+
+
+
