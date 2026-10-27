@@ -1,8 +1,6 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -28,13 +26,15 @@ public class PayRollCalculatorApp {
 
     }
 
-    private static List<Employee> loadEmployees() {
+    private static List<Employee> loadEmployees(String inputFile, String outputFile) {
         List<Employee> employees = new ArrayList<>();
-        //  Scanner scanner = new Scanner(System.in);
 
         try {
-            FileReader fileReader = new FileReader("employees.csv");
+            FileReader fileReader = new FileReader(inputFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            FileWriter fileWriter = new FileWriter(outputFile);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
             String line;
 
