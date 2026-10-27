@@ -13,7 +13,8 @@ public class PayRollCalculatorApp {
 
         Scanner scanner = new Scanner(System.in);
 
-
+        System.out.println("Enter employee file name: ");
+        String inputFile = scanner.nextLine();
 
         List<Employee> employees = loadEmployees();
 
